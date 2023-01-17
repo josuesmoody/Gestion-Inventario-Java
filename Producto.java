@@ -1,4 +1,6 @@
-package iria;
+/**
+@author: Josué Santana
+*/
 
 class Producto {
 	private String codigo;
