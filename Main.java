@@ -1,4 +1,6 @@
-package iria;
+/**
+@author: Josué Santana
+*/
 
 public class Main {
 
@@ -6,10 +8,10 @@ public class Main {
 	public static void main(String[] args)
     {
     	Almacen almacen= new Almacen();
-    	almacen.altaProducto(new Producto("132", "Ferrari", "murci�lago", 2));
+    	almacen.altaProducto(new Producto("132", "Ferrari", "murciélago", 2));
     	almacen.altaProducto(new Producto("123", "Audi", "R8", 4));
     	almacen.altaProducto(new Producto("321", "Bugatti", "Bairon", 1));
-		almacen.verMenu2();
+	almacen.verMenu2();
     }
 
 }
