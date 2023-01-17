@@ -1,4 +1,6 @@
-package iria;
+/**
+@author: JosuÃ© Santana
+*/
 
 import java.util.*;
 
@@ -104,7 +106,7 @@ public class Almacen {
 	
 	///////////////////////////////////////////////////////////////////
 	
-	// Funciones del menú y submenú
+	// Funciones del menÃº y submenÃº
 	
 	
 	
@@ -112,16 +114,16 @@ public class Almacen {
 		
 		System.out.println("\n");
 		System.out.println("-------------------------------");
-		System.out.println("|     SUBMENÚ DE OPCIONES     |");
+		System.out.println("|     SUBMENÃš DE OPCIONES     |");
 		System.out.println("-------------------------------");
 		System.out.println("| a. Buscar por marca         |");
 		System.out.println("| b. Busacr por modelo        |");
-		System.out.println("| c. Buscar por código        |");
-		System.out.println("| d. Volver al menú principal |");
+		System.out.println("| c. Buscar por cÃ³digo        |");
+		System.out.println("| d. Volver al menÃº principal |");
 		System.out.println("-------------------------------");
 		
 		System.out.println("\n");
-		System.out.println("Escoge la opción de búsqueda:");
+		System.out.println("Escoge la opciÃ³n de bÃºsqueda:");
 		List<Producto> busqueda;
 		
 		char opcion = sc.next().charAt(0);
@@ -131,7 +133,7 @@ public class Almacen {
 			busqueda = almacen.buscarPorMarca(marca);
 			System.out.println("Productos de la marca " + marca + ":");
 			for (Producto producto : busqueda) {
-				System.out.println("| Código: " + producto.getCodigo() + " | Marca: " + producto.getMarca() + " | Modelo: " + producto.getModelo() + " | Cantidad: " + producto.getCantidadDisponible() + " |");
+				System.out.println("| CÃ³digo: " + producto.getCodigo() + " | Marca: " + producto.getMarca() + " | Modelo: " + producto.getModelo() + " | Cantidad: " + producto.getCantidadDisponible() + " |");
 				}
 		} else if (opcion == 'b') {
 			System.out.print("Introduce el modelo: ");
@@ -139,14 +141,14 @@ public class Almacen {
 			busqueda = almacen.buscarPorModelo(modelo);
 			System.out.println("Productos del modelo " + modelo + ":");
 			for (Producto producto : busqueda) {
-				System.out.println("| Código: " + producto.getCodigo() + " | Marca: " + producto.getMarca() + " | Modelo: " + producto.getModelo() + " | Cantidad: " + producto.getCantidadDisponible() + " |");
+				System.out.println("| CÃ³digo: " + producto.getCodigo() + " | Marca: " + producto.getMarca() + " | Modelo: " + producto.getModelo() + " | Cantidad: " + producto.getCantidadDisponible() + " |");
 				}
 		} else if (opcion == 'c') {
-			System.out.print("Introduce el código del producto: ");
+			System.out.print("Introduce el cÃ³digo del producto: ");
 			codigo = sc.next();
 			Producto producto = almacen.buscarPorCodigo(codigo);
 			if (producto != null) {
-				System.out.println("| Código: " + producto.getCodigo() + " | Marca: " + producto.getMarca() + " | Modelo: " + producto.getModelo() + " | Cantidad: " + producto.getCantidadDisponible() + " |");
+				System.out.println("| CÃ³digo: " + producto.getCodigo() + " | Marca: " + producto.getMarca() + " | Modelo: " + producto.getModelo() + " | Cantidad: " + producto.getCantidadDisponible() + " |");
 				} else {
 				System.err.println("El producto no fue encontrado en la base de datos.");
 			}
@@ -164,24 +166,24 @@ public class Almacen {
 		while (true) {
 			System.out.println("\n");
 			System.out.println("-----------------------------------------------");
-			System.out.println("|              MENÚ DE OPCIONES               |");
+			System.out.println("|              MENÃš DE OPCIONES               |");
 			System.out.println("-----------------------------------------------");
 			System.out.println("| 1. Alta producto                            |");
 			System.out.println("| 2. Baja producto                            |");
 			System.out.println("| 3. Editar producto                          |");
 			System.out.println("| 4. Disminuir cantidad disponible            |");
 			System.out.println("| 5. Aumentar cantidad disponible             |");
-			System.out.println("| 6. Búsqueda de un producto determinado      |");
+			System.out.println("| 6. BÃºsqueda de un producto determinado      |");
 			System.out.println("| 7. Mostrar todos los productos (por marca)  |");
 			System.out.println("| 8. Salir                                    |");
 			System.out.println("-----------------------------------------------");
 			
 			System.out.println("\n");
-			System.out.println("Elija la opción que desea ejecutar: ");
+			System.out.println("Elija la opciÃ³n que desea ejecutar: ");
 			opcion = sc.nextInt();
 			
 			if (opcion == 1) {
-				System.out.print("Introducir el código del producto: ");
+				System.out.print("Introducir el cÃ³digo del producto: ");
 				codigo = sc.next();
 				System.out.print("Introducir marca: ");
 				marca = sc.next();
@@ -191,11 +193,11 @@ public class Almacen {
 				cantidadDisponible = sc.nextInt();
 				almacen.altaProducto(new Producto(codigo, marca, modelo, cantidadDisponible));
 			} else if (opcion == 2) {
-				System.out.print("Introducir el código del producto: ");
+				System.out.print("Introducir el cÃ³digo del producto: ");
 				codigo = sc.next();
 				almacen.bajaProducto(codigo);
 			} else if (opcion == 3) {
-				System.out.print("Introducir el código del producto: ");
+				System.out.print("Introducir el cÃ³digo del producto: ");
 				codigo = sc.next();
 				System.out.print("Introducir marca: ");
 				marca = sc.next();
@@ -205,13 +207,13 @@ public class Almacen {
 				cantidadDisponible = sc.nextInt();
 				almacen.editarProducto(codigo, marca, modelo, cantidadDisponible);
 			} else if (opcion == 4) {
-				System.out.print("Introducir el código del producto: ");
+				System.out.print("Introducir el cÃ³digo del producto: ");
 				codigo = sc.next();
 				System.out.print("Introduce la cantidad que quieres disminuir: ");
 				cantidadDisponible = sc.nextInt();
 				almacen.disminuirCantidadDisponible(codigo, cantidadDisponible);
 			} else if (opcion == 5) {
-				System.out.print("Introducir el código del producto: ");
+				System.out.print("Introducir el cÃ³digo del producto: ");
 				codigo = sc.next();
 				System.out.print("Introduce la cantidad que quieres aumentar: ");
 				cantidadDisponible = sc.nextInt();
@@ -222,14 +224,14 @@ public class Almacen {
 				List<Producto> productos = almacen.verListaProductos();
 				System.out.println("Lista de productos (por marca):");
 				for (Producto producto : productos) {
-					System.out.println("| Código: " + producto.getCodigo() + " | Marca: " + producto.getMarca() + " | Modelo: " + producto.getModelo() + " | Cantidad: " + producto.getCantidadDisponible() + " |");
+					System.out.println("| CÃ³digo: " + producto.getCodigo() + " | Marca: " + producto.getMarca() + " | Modelo: " + producto.getModelo() + " | Cantidad: " + producto.getCantidadDisponible() + " |");
 					}
 			} else if (opcion == 8) {
-				System.out.println("Adiós...");
+				System.out.println("AdiÃ³s...");
 				break;
 	
 			} else if (opcion > 8 || opcion < 1) {
-				System.err.println("Opción inválida, inténtalo otra vez");
+				System.err.println("OpciÃ³n invÃ¡lida, intÃ©ntalo otra vez");
 			}
 		}
 		sc.close();
